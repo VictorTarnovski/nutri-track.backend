@@ -38,6 +38,9 @@ public class Appointment extends AbstractAggregateRoot {
 
     private String state;
 
+    @Version
+    private Integer version;
+
     //endregion
 
     //region constructors
