@@ -29,13 +29,6 @@ public class Appointment extends AbstractAggregateRoot {
     })
     private OffsetDateTimeRange scheduledTo;
 
-    @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name = "start", column = @Column(name = "duration_start")),
-            @AttributeOverride(name = "end", column = @Column(name = "duration_end")),
-    })
-    private OffsetDateTimeRange duration;
-
     private String state;
 
     @Version
@@ -61,10 +54,6 @@ public class Appointment extends AbstractAggregateRoot {
     //region getters
     public OffsetDateTimeRange scheduledTo() {
         return this.scheduledTo;
-    }
-
-    public OffsetDateTimeRange duration() {
-        return this.duration;
     }
 
     public Long patientId() {
