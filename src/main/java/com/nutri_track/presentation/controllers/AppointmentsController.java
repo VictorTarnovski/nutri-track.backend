@@ -2,15 +2,12 @@ package com.nutri_track.presentation.controllers;
 
 import com.nutri_track.application.use_cases.*;
 import com.nutri_track.domain.dtos.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/appointments")
 public class AppointmentsController {
-    Logger logger = LoggerFactory.getLogger(AppointmentsController.class);
     private final CreateAppointmentUseCase createAppointmentUseCase;
     private final UpdateAppointmentUseCase updateAppointmentUseCase;
     private final GetAppointmentsUseCase getAppointmentsUseCase;
