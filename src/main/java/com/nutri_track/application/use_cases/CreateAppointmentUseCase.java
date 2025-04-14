@@ -1,46 +1,50 @@
 package com.nutri_track.application.use_cases;
 
 import com.nutri_track.domain.entities.Appointment;
-import com.nutri_track.domain.exceptions.PatientNotFoundException;
-import com.nutri_track.domain.exceptions.ProfessionalNotFoundException;
+import com.nutri_track.domain.exceptions.AppointmentOverlapException;
 import com.nutri_track.domain.repositories.AppointmentRepository;
-import com.nutri_track.domain.repositories.PatientRepository;
-import com.nutri_track.domain.repositories.ProfessionalRepository;
 import com.nutri_track.domain.specifications.AppointmentHasIdSpecification;
-import com.nutri_track.domain.specifications.PatientHasIdSpecification;
-import com.nutri_track.domain.specifications.ProfessionalHasIdSpecification;
+import com.nutri_track.domain.specifications.AppointmentHasPatientSpecification;
+import com.nutri_track.domain.specifications.AppointmentHasProfessionalSpecification;
+import com.nutri_track.domain.specifications.AppointmentIsScheduledBetweenSpecification;
 import com.nutri_track.domain.value_objects.OffsetDateTimeRange;
 import com.nutri_track.domain.dtos.CreateAppointmentDto;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CreateAppointmentUseCase {
+    private final GetPatientUseCase getPatientUseCase;
+    private final GetProfessionalUseCase getProfessionalUseCase;
     private final AppointmentRepository appointmentRepository;
-    private final PatientRepository patientRepository;
-    private final ProfessionalRepository professionalRepository;
 
     public CreateAppointmentUseCase(
-            AppointmentRepository appointmentRepository,
-            PatientRepository patientRepository,
-            ProfessionalRepository professionalRepository) {
+            GetPatientUseCase getPatientUseCase,
+            GetProfessionalUseCase getProfessionalUseCase,
+            AppointmentRepository appointmentRepository) {
         this.appointmentRepository = appointmentRepository;
-        this.patientRepository = patientRepository;
-        this.professionalRepository = professionalRepository;
+        this.getPatientUseCase = getPatientUseCase;
+        this.getProfessionalUseCase = getProfessionalUseCase;
     }
 
     public Appointment execute(CreateAppointmentDto dto) {
-        var patientSpec = new PatientHasIdSpecification(dto.patientId());
-        var patient = patientRepository
-                .findOne(patientSpec)
-                .orElseThrow(() -> new PatientNotFoundException(dto.patientId()));
+        var patient = getPatientUseCase.execute(dto.patientId());
 
-        var professionalSpec = new ProfessionalHasIdSpecification(dto.professionalId());
-        var professional = professionalRepository
-                .findOne(professionalSpec)
-                .orElseThrow(() -> new ProfessionalNotFoundException(dto.professionalId()));
+        var professional = getProfessionalUseCase.execute(dto.professionalId());
+
+        var schedule = new OffsetDateTimeRange(dto.scheduledToStart(), dto.scheduledToEnd());
+
+        var overlappedAppointments = appointmentRepository.findAll(
+                new AppointmentIsScheduledBetweenSpecification(schedule)
+                        .and(new AppointmentHasPatientSpecification(patient))
+                        .and(new AppointmentHasProfessionalSpecification(professional))
+        );
+
+        if (!overlappedAppointments.isEmpty()) {
+            throw new AppointmentOverlapException();
+        }
 
         var appointment = new Appointment(
-                new OffsetDateTimeRange(dto.scheduledToStart(), dto.scheduledToEnd()),
+                schedule,
                 patient,
                 professional);
         /*

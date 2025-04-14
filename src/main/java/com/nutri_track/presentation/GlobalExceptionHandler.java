@@ -1,5 +1,6 @@
 package com.nutri_track.presentation;
 
+import com.nutri_track.domain.exceptions.AppointmentOverlapException;
 import com.nutri_track.domain.exceptions.NutriTrackRuntimeException;
 import com.nutri_track.domain.dtos.MessageDto;
 import jakarta.persistence.OptimisticLockException;
@@ -22,5 +23,12 @@ public class GlobalExceptionHandler {
         return ResponseEntity
                 .status(HttpStatus.CONFLICT)
                 .body(new MessageDto("The resource has been modified by another process. Please try again."));
+    }
+
+    @ExceptionHandler({AppointmentOverlapException.class})
+    public ResponseEntity<MessageDto> handleAppointmentOverlapException(AppointmentOverlapException exception) {
+        return ResponseEntity
+                .status(HttpStatus.CONFLICT)
+                .body(new MessageDto(exception.getMessage()));
     }
 }
