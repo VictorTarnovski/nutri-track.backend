@@ -1,11 +1,12 @@
 package com.nutri_track.domain.specifications;
 
 import com.nutri_track.domain.entities.Professional;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.*;
 import org.springframework.data.jpa.domain.Specification;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class ProfessionalSearchSpecification implements Specification<Professional> {
     private final String search;
@@ -16,10 +17,18 @@ public class ProfessionalSearchSpecification implements Specification<Profession
 
     @Override
     public Predicate toPredicate(Root<Professional> root, CriteriaQuery<?> query, CriteriaBuilder builder) {
-        return builder.or(
-                root.get("document").in(search),
-                root.get("firstName").in(search),
-                (root.get("lastName").in(search))
-        );
+        var paths = Arrays.asList("document", "firstName", "lastName");
+        var predicates = new ArrayList<Predicate>();
+
+        for (String path: paths) {
+            var predicate = builder.like(
+                    builder.lower(root.get(path)),
+                    "%" + search.toLowerCase() + "%"
+            );
+
+            predicates.add(predicate);
+        }
+
+        return builder.or(predicates.toArray(Predicate[]::new));
     }
 }
