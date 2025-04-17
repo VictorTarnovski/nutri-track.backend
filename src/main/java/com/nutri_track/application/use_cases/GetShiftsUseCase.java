@@ -6,9 +6,9 @@ import com.nutri_track.domain.repositories.ShiftRepository;
 import com.nutri_track.domain.specifications.ShiftIsNotNullSpecification;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class GetShiftsUseCase {
     private final ShiftRepository shiftRepository;
 

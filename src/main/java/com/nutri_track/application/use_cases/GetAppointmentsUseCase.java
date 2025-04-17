@@ -6,9 +6,9 @@ import com.nutri_track.domain.repositories.AppointmentRepository;
 import com.nutri_track.domain.specifications.AppointmentIsNotNullSpecification;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class GetAppointmentsUseCase {
     private final AppointmentRepository appointmentRepository;
 

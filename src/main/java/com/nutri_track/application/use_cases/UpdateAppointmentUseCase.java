@@ -12,9 +12,9 @@ import com.nutri_track.domain.specifications.AppointmentHasIdSpecification;
 import com.nutri_track.domain.specifications.PatientHasIdSpecification;
 import com.nutri_track.domain.specifications.ProfessionalHasIdSpecification;
 import com.nutri_track.domain.value_objects.OffsetDateTimeRange;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class UpdateAppointmentUseCase {
     private final AppointmentRepository appointmentRepository;
     private final PatientRepository patientRepository;

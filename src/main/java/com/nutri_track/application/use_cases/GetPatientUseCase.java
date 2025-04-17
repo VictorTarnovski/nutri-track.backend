@@ -4,9 +4,9 @@ import com.nutri_track.domain.entities.Patient;
 import com.nutri_track.domain.exceptions.PatientNotFoundException;
 import com.nutri_track.domain.repositories.PatientRepository;
 import com.nutri_track.domain.specifications.PatientHasIdSpecification;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class GetPatientUseCase {
     private final PatientRepository patientRepository;
 

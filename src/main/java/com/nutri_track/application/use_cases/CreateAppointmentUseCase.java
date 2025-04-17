@@ -9,9 +9,9 @@ import com.nutri_track.domain.specifications.AppointmentHasProfessionalSpecifica
 import com.nutri_track.domain.specifications.AppointmentIsScheduledBetweenSpecification;
 import com.nutri_track.domain.value_objects.OffsetDateTimeRange;
 import com.nutri_track.domain.dtos.CreateAppointmentDto;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class CreateAppointmentUseCase {
     private final GetPatientUseCase getPatientUseCase;
     private final GetProfessionalUseCase getProfessionalUseCase;

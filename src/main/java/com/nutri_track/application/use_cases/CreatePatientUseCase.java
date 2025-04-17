@@ -7,9 +7,9 @@ import com.nutri_track.domain.specifications.PatientHasDocumentSpecification;
 import com.nutri_track.domain.specifications.PatientHasIdSpecification;
 import com.nutri_track.domain.dtos.CreatePatientDto;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class CreatePatientUseCase {
     private final PatientRepository patientRepository;
 

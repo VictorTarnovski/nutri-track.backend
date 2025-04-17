@@ -4,9 +4,9 @@ import com.nutri_track.domain.entities.Professional;
 import com.nutri_track.domain.exceptions.ProfessionalNotFoundException;
 import com.nutri_track.domain.repositories.ProfessionalRepository;
 import com.nutri_track.domain.specifications.ProfessionalHasIdSpecification;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class GetProfessionalUseCase {
     private final ProfessionalRepository professionalRepository;
 

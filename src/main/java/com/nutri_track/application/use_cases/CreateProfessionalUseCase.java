@@ -7,9 +7,9 @@ import com.nutri_track.domain.specifications.ProfessionalHasDocumentSpecificatio
 import com.nutri_track.domain.specifications.ProfessionalHasIdSpecification;
 import com.nutri_track.domain.dtos.CreateProfessionalDto;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class CreateProfessionalUseCase {
     private final ProfessionalRepository professionalRepository;
 

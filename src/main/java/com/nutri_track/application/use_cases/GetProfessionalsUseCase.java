@@ -9,9 +9,9 @@ import com.nutri_track.domain.specifications.ProfessionalSearchSpecification;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class GetProfessionalsUseCase {
     private final ProfessionalRepository professionalRepository;
 
