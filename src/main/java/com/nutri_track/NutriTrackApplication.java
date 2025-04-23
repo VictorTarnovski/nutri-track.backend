@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 @EnableJpaRepositories("com.nutri_track.domain.repositories")
-@EntityScan(basePackages = {"com.nutri_track.domain.entities"})
+@EntityScan(basePackages = {"com.nutri_track.domain.entities", "com.nutri_track.domain.value_objects"})
 public class NutriTrackApplication {
 
 	public static void main(String[] args) {

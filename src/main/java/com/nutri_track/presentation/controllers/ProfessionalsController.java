@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/professionals")
 public class ProfessionalsController {
-
     private final CreateProfessionalUseCase createProfessionalUseCase;
     private final GetProfessionalUseCase getProfessionalUseCase;
     private final GetProfessionalsUseCase getProfessionalsUseCase;

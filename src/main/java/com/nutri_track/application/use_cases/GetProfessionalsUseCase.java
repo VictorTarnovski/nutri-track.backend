@@ -4,6 +4,7 @@ import com.nutri_track.domain.dtos.GetProfessionalsDto;
 import com.nutri_track.domain.entities.Professional;
 import com.nutri_track.domain.repositories.ProfessionalRepository;
 import com.nutri_track.domain.specifications.ProfessionalHasIdInRangeSpecification;
+import com.nutri_track.domain.specifications.ProfessionalHasSpecialtiesSpecification;
 import com.nutri_track.domain.specifications.ProfessionalIsNotNullSpecification;
 import com.nutri_track.domain.specifications.ProfessionalSearchSpecification;
 import org.springframework.data.domain.Page;
@@ -25,6 +26,12 @@ public class GetProfessionalsUseCase {
         if (dto.ids().isPresent()) {
             spec = spec.and(
                     new ProfessionalHasIdInRangeSpecification(dto.ids().get())
+            );
+        }
+
+        if (dto.specialtyIds().isPresent()) {
+            spec = spec.and(
+              new ProfessionalHasSpecialtiesSpecification(dto.specialtyIds().get())
             );
         }
 
