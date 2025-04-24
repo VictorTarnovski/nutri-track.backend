@@ -14,10 +14,14 @@ public class CreatePersonDto {
     @NotBlank
     protected String lastName;
 
-    public CreatePersonDto(String document, String firstName, String lastName) {
+    @NotNull
+    protected AddressDto address;
+
+    public CreatePersonDto(String document, String firstName, String lastName, AddressDto address) {
         this.document = document;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.address = address;
     }
 
     public String document() {
@@ -30,6 +34,10 @@ public class CreatePersonDto {
 
     public String lastName() {
         return this.lastName;
+    }
+
+    public AddressDto address() {
+        return this.address;
     }
 
 }

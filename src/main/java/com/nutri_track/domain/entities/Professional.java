@@ -1,5 +1,6 @@
 package com.nutri_track.domain.entities;
 
+import com.nutri_track.domain.value_objects.Address;
 import com.nutri_track.domain.value_objects.Specialty;
 import jakarta.persistence.*;
 
@@ -17,8 +18,8 @@ public class Professional extends Person {
         super();
     }
 
-    public Professional(String document, String firstName, String lastName) {
-        super(document, firstName, lastName);
+    public Professional(String document, String firstName, String lastName, Address address) {
+        super(document, firstName, lastName, address);
     }
 
     public Set<Specialty> specialties() {

@@ -27,7 +27,8 @@ public class CreatePatientUseCase {
         var patient = new Patient(
                 dto.document(),
                 dto.firstName(),
-                dto.lastName()
+                dto.lastName(),
+                dto.address().toAddress()
         );
         patientRepository.save(patient);
         spec = new PatientHasIdSpecification(patient.id());

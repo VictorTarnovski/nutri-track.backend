@@ -27,7 +27,8 @@ public class CreateProfessionalUseCase {
         var professional = new Professional(
                 dto.document(),
                 dto.firstName(),
-                dto.lastName()
+                dto.lastName(),
+                dto.address().toAddress()
         );
         professionalRepository.save(professional);
         spec = new ProfessionalHasIdSpecification(professional.id());
