@@ -1,5 +1,6 @@
 package com.nutri_track.domain.dtos;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -15,9 +16,14 @@ public class CreatePersonDto {
     protected String lastName;
 
     @NotNull
+    @Valid
     protected AddressDto address;
 
-    public CreatePersonDto(String document, String firstName, String lastName, AddressDto address) {
+    public CreatePersonDto(
+            String document,
+            String firstName,
+            String lastName,
+            AddressDto address) {
         this.document = document;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -2,6 +2,7 @@ package com.nutri_track.presentation.controllers;
 
 import com.nutri_track.application.use_cases.*;
 import com.nutri_track.domain.dtos.*;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,13 +29,21 @@ public class AppointmentsController {
     }
 
     @PostMapping
-    public ResponseEntity<AppointmentDto> CreateAppointment(@RequestBody CreateAppointmentDto dto) {
+    public ResponseEntity<AppointmentDto> CreateAppointment(
+            @Valid
+            @RequestBody
+            CreateAppointmentDto dto) {
         var appointment = createAppointmentUseCase.execute(dto);
         return ResponseEntity.ok(new AppointmentDto(appointment));
     }
 
     @PatchMapping("/{appointmentId}")
-    public ResponseEntity<AppointmentDto> UpdateAppointment(@PathVariable long appointmentId, @RequestBody UpdateAppointmentDto dto) {
+    public ResponseEntity<AppointmentDto> UpdateAppointment(
+            @PathVariable
+            long appointmentId,
+            @Valid
+            @RequestBody
+            UpdateAppointmentDto dto) {
         var appointment = updateAppointmentUseCase.execute(appointmentId, dto);
         return ResponseEntity.ok(new AppointmentDto(appointment));
     }

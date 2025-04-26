@@ -7,6 +7,7 @@ import com.nutri_track.application.use_cases.GetPatientsUseCase;
 import com.nutri_track.domain.dtos.PatientDto;
 import com.nutri_track.domain.dtos.CreatePatientDto;
 import com.nutri_track.domain.dtos.PaginationDto;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +29,10 @@ public class PatientsController {
     }
 
     @PostMapping
-    public ResponseEntity<PatientDto> CreatePatient(@RequestBody CreatePatientDto dto) {
+    public ResponseEntity<PatientDto> CreatePatient(
+            @Valid
+            @RequestBody
+            CreatePatientDto dto) {
         var patient = createPatientUseCase.execute(dto);
         return ResponseEntity.ok(new PatientDto(patient));
     }

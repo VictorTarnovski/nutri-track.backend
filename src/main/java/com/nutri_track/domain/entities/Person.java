@@ -1,9 +1,7 @@
-package com.nutri_track.domain.entities;
+    package com.nutri_track.domain.entities;
 
 import com.nutri_track.domain.value_objects.Address;
 import jakarta.persistence.*;
-
-import java.util.Optional;
 
 @MappedSuperclass
 public abstract class Person extends AbstractAggregateRoot {
@@ -16,13 +14,10 @@ public abstract class Person extends AbstractAggregateRoot {
     @AttributeOverrides({
             @AttributeOverride(name = "line1", column = @Column(name = "address_line1")),
             @AttributeOverride(name = "line2", column = @Column(name = "address_line2")),
-            @AttributeOverride(name = "line3", column = @Column(name = "address_line3")),
             @AttributeOverride(name = "city", column = @Column(name = "address_city")),
             @AttributeOverride(name = "region", column = @Column(name = "address_region")),
             @AttributeOverride(name = "postalCode", column = @Column(name = "address_postalCode")),
             @AttributeOverride(name = "countryCode", column = @Column(name = "address_countryCode")),
-            @AttributeOverride(name = "recipientName", column = @Column(name = "address_recipientName")),
-            @AttributeOverride(name = "organization", column = @Column(name = "address_organization"))
     })
     protected Address address;
 
@@ -39,9 +34,17 @@ public abstract class Person extends AbstractAggregateRoot {
             String lastName,
             Address address) {
         super();
-        this.firstName = firstName;
-        this.lastName = lastName;
+
+        if (document == null) throw new IllegalArgumentException("document must not be null");
         this.document = document;
+
+        if (firstName == null) throw new IllegalArgumentException("firstName must not be null");
+        this.firstName = firstName;
+
+        if (lastName == null) throw new IllegalArgumentException("lastName must not be null");
+        this.lastName = lastName;
+
+        if (address == null) throw new IllegalArgumentException("address must not be null");
         this.address = address;
     }
 
@@ -69,10 +72,6 @@ public abstract class Person extends AbstractAggregateRoot {
         return address.line2();
     }
 
-    public Optional<String> addressLine3() {
-        return address.line3();
-    }
-
     public String city() {
         return address.city();
     }
@@ -87,14 +86,6 @@ public abstract class Person extends AbstractAggregateRoot {
 
     public String countryCode() {
         return address.countryCode();
-    }
-
-    public Optional<String> recipientName() {
-        return address.recipientName();
-    }
-
-    public Optional<String> organization() {
-        return address.organization();
     }
 
     //endregion

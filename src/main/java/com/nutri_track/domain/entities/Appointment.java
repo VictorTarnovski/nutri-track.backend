@@ -43,9 +43,15 @@ public class Appointment extends AbstractAggregateRoot {
             OffsetDateTimeRange scheduledTo,
             Patient patient,
             Professional professional) {
+        if (scheduledTo == null) throw new IllegalArgumentException("scheduledTo must not be null");
+        schedule(scheduledTo);
+
+        if (patient == null) throw new IllegalArgumentException("patient must not be null");
         this.patient =  patient;
+
+        if (professional == null) throw new IllegalArgumentException("professional must not be null");
         this.professional = professional;
-		schedule(scheduledTo);
+
         this.state = new ConfirmationPendingAppointmentState().name();
     }
 

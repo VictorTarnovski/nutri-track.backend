@@ -6,13 +6,10 @@ public class AddressBuilder {
     //region fields
     private String line1;
     private String line2;
-    private String line3;
     private String city;
     private String region;
     private String postalCode;
     private String countryCode;
-    private String recipientName;
-    private String organization;
 
     //endregion
 
@@ -23,13 +20,10 @@ public class AddressBuilder {
         return new AddressBuilder()
                 .withLine1(address.line1())
                 .withLine2(address.line2())
-                .withLine3(address.line3().get())
                 .withCity(address.city())
                 .withRegion(address.region())
                 .withPostalCode(address.postalCode())
-                .withCountryCode(address.countryCode())
-                .withRecipientName(address.recipientName().get())
-                .withOrganization(address.organization().get());
+                .withCountryCode(address.countryCode());
     }
 
     //endregion
@@ -42,11 +36,6 @@ public class AddressBuilder {
 
     public AddressBuilder withLine2(String line2) {
         this.line2 = line2;
-        return this;
-    }
-
-    public AddressBuilder withLine3(String line3) {
-        this.line3 = line3;
         return this;
     }
 
@@ -70,27 +59,14 @@ public class AddressBuilder {
         return this;
     }
 
-    public AddressBuilder withRecipientName(String recipientName) {
-        this.recipientName = recipientName;
-        return this;
-    }
-
-    public AddressBuilder withOrganization(String organization) {
-        this.organization = organization;
-        return this;
-    }
-
     public Address build() {
         return new Address(
                 line1,
                 line2,
-                line3,
                 city,
                 region,
                 postalCode,
-                countryCode,
-                recipientName,
-                organization
+                countryCode
         );
     }
 

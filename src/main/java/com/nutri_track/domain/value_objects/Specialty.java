@@ -27,7 +27,11 @@ public class Specialty extends AbstractAggregateRoot implements Comparable<Speci
 
     protected Specialty(String name, Set<Professional> professionals) {
         super();
+
+        if (name == null) throw new IllegalArgumentException("name must not be null");
         this.name = name;
+
+        if (professionals == null) throw new IllegalArgumentException("professionals must not be null");
         this.professionals = professionals;
     }
 

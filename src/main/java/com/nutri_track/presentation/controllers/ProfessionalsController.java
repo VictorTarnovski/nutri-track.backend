@@ -7,6 +7,7 @@ import com.nutri_track.application.use_cases.GetProfessionalsUseCase;
 import com.nutri_track.domain.dtos.ProfessionalDto;
 import com.nutri_track.domain.dtos.CreateProfessionalDto;
 import com.nutri_track.domain.dtos.PaginationDto;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +28,10 @@ public class ProfessionalsController {
     }
 
     @PostMapping
-    public ResponseEntity<ProfessionalDto> CreateProfessional(@RequestBody CreateProfessionalDto dto) {
+    public ResponseEntity<ProfessionalDto> CreateProfessional(
+            @Valid
+            @RequestBody
+            CreateProfessionalDto dto) {
         var professional = createProfessionalUseCase.execute(dto);
         return ResponseEntity.ok(new ProfessionalDto(professional));
     }

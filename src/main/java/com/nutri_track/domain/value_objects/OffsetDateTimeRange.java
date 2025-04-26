@@ -17,6 +17,9 @@ public class OffsetDateTimeRange implements Comparable<OffsetDateTimeRange> {
     protected OffsetDateTimeRange() { }
 
     public OffsetDateTimeRange(OffsetDateTime start, OffsetDateTime end) {
+        if (start == null) throw new IllegalArgumentException("start must not be null");
+        if (end == null) throw new IllegalArgumentException("end must not be null");
+
         if (end.isBefore(start)) {
             throw new OffsetDateTimeRangeEndBeforeStartException(start, end);
         }

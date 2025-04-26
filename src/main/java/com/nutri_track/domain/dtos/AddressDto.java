@@ -12,7 +12,6 @@ public class AddressDto {
     @NotNull
     @NotBlank
     public String line2;
-    public String line3;
     @NotNull
     @NotBlank
     public String city;
@@ -25,33 +24,31 @@ public class AddressDto {
     @NotNull
     @NotBlank
     public String countryCode;
-    public String recipientName;
-    public String organization;
 
-    public AddressDto(Address address){
-        this.line1 = address.line1();
-        this.line2 = address.line2();
-        this.line3 = address.line3().get();
-        this.city = address.city();
-        this.region = address.region();
-        this.postalCode = address.postalCode();
-        this.countryCode = address.countryCode();
-        this.recipientName = address.recipientName().get();
-        this.organization = address.organization().get();
+    public AddressDto(
+            String line1,
+            String line2,
+            String city,
+            String region,
+            String postalCode,
+            String countryCode
+    ) {
+        this.line1 = line1;
+        this.line2 = line2;
+        this.city = city;
+        this.region = region;
+        this.postalCode = postalCode;
+        this.countryCode = countryCode;
     }
 
     public Address toAddress() {
         return new AddressBuilder()
                 .withLine1(line1)
                 .withLine2(line2)
-                .withLine3(line3)
                 .withCity(city)
                 .withRegion(region)
                 .withPostalCode(postalCode)
                 .withCountryCode(countryCode)
-                .withRecipientName(recipientName)
-                .withOrganization(organization)
                 .build();
     }
 }
-
