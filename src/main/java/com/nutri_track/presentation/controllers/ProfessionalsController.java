@@ -1,12 +1,12 @@
 package com.nutri_track.presentation.controllers;
 
 import com.nutri_track.application.use_cases.GetProfessionalUseCase;
-import com.nutri_track.domain.dtos.GetProfessionalsDto;
+import com.nutri_track.application.dtos.GetProfessionalsDto;
 import com.nutri_track.application.use_cases.CreateProfessionalUseCase;
 import com.nutri_track.application.use_cases.GetProfessionalsUseCase;
-import com.nutri_track.domain.dtos.ProfessionalDto;
-import com.nutri_track.domain.dtos.CreateProfessionalDto;
-import com.nutri_track.domain.dtos.PaginationDto;
+import com.nutri_track.application.dtos.ProfessionalDto;
+import com.nutri_track.application.dtos.CreateProfessionalDto;
+import com.nutri_track.application.dtos.PaginationDto;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

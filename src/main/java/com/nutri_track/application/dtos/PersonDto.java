@@ -1,6 +1,6 @@
-package com.nutri_track.domain.dtos;
+package com.nutri_track.application.dtos;
 
-import com.nutri_track.domain.dtos.builders.AddressDtoBuilder;
+import com.nutri_track.application.dtos.builders.AddressDtoBuilder;
 import com.nutri_track.domain.entities.Person;
 
 public class PersonDto extends EntityDto {

@@ -1,8 +1,6 @@
-package com.nutri_track.domain.dtos;
+package com.nutri_track.application.dtos;
 
 import jakarta.validation.constraints.Future;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Null;
 import jakarta.validation.constraints.Positive;
 
 import java.time.OffsetDateTime;

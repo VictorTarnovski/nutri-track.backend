@@ -2,9 +2,9 @@ package com.nutri_track.presentation.controllers;
 
 import com.nutri_track.application.use_cases.GetSpecialtyUseCase;
 import com.nutri_track.application.use_cases.GetSpecialtiesUseCase;
-import com.nutri_track.domain.dtos.GetSpecialtiesDto;
-import com.nutri_track.domain.dtos.PaginationDto;
-import com.nutri_track.domain.dtos.SpecialtyDto;
+import com.nutri_track.application.dtos.GetSpecialtiesDto;
+import com.nutri_track.application.dtos.PaginationDto;
+import com.nutri_track.application.dtos.SpecialtyDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

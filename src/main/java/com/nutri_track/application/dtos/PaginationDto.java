@@ -1,4 +1,4 @@
-package com.nutri_track.domain.dtos;
+package com.nutri_track.application.dtos;
 
 import org.springframework.data.domain.Page;
 

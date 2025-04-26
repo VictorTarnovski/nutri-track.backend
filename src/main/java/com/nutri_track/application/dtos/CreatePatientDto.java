@@ -1,4 +1,4 @@
-package com.nutri_track.domain.dtos;
+package com.nutri_track.application.dtos;
 
 public class CreatePatientDto extends CreatePersonDto {
     public CreatePatientDto(

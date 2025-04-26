@@ -1,4 +1,4 @@
-package com.nutri_track.domain.dtos;
+package com.nutri_track.application.dtos;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;

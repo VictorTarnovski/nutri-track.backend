@@ -1,3 +1,3 @@
-package com.nutri_track.domain.dtos;
+package com.nutri_track.application.dtos;
 
 public record MessageDto(String message) { }

@@ -1,4 +1,4 @@
-package com.nutri_track.domain.dtos;
+package com.nutri_track.application.dtos;
 
 import java.util.List;
 import java.util.Optional;

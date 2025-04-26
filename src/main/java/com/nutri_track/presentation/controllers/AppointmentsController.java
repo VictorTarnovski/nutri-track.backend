@@ -1,7 +1,7 @@
 package com.nutri_track.presentation.controllers;
 
+import com.nutri_track.application.dtos.*;
 import com.nutri_track.application.use_cases.*;
-import com.nutri_track.domain.dtos.*;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,6 +1,6 @@
-package com.nutri_track.domain.dtos.builders;
+package com.nutri_track.application.dtos.builders;
 
-import com.nutri_track.domain.dtos.AddressDto;
+import com.nutri_track.application.dtos.AddressDto;
 
 public class AddressDtoBuilder {
     //region fields

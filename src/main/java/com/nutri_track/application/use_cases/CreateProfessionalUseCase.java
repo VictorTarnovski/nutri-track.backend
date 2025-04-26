@@ -5,7 +5,7 @@ import com.nutri_track.domain.exceptions.ProfessionalAlreadyRegisteredException;
 import com.nutri_track.domain.repositories.ProfessionalRepository;
 import com.nutri_track.domain.specifications.ProfessionalHasDocumentSpecification;
 import com.nutri_track.domain.specifications.ProfessionalHasIdSpecification;
-import com.nutri_track.domain.dtos.CreateProfessionalDto;
+import com.nutri_track.application.dtos.CreateProfessionalDto;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 

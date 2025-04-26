@@ -1,6 +1,6 @@
 package com.nutri_track.application.use_cases;
 
-import com.nutri_track.domain.dtos.UpdateAppointmentDto;
+import com.nutri_track.application.dtos.UpdateAppointmentDto;
 import com.nutri_track.domain.entities.Appointment;
 import com.nutri_track.domain.exceptions.AppointmentNotFoundException;
 import com.nutri_track.domain.exceptions.PatientNotFoundException;

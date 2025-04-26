@@ -1,4 +1,4 @@
-package com.nutri_track.domain.dtos;
+package com.nutri_track.application.dtos;
 
 import com.nutri_track.domain.value_objects.Address;
 import com.nutri_track.domain.value_objects.builders.AddressBuilder;
