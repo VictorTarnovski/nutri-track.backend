@@ -1,7 +1,7 @@
 package com.nutri_track.application.use_cases.specialties;
 
 import com.nutri_track.domain.value_objects.Specialty;
-import com.nutri_track.domain.exceptions.SpecialtyNotFoundException;
+import com.nutri_track.domain.exceptions.specialties.SpecialtyNotFoundException;
 import com.nutri_track.domain.repositories.SpecialtyRepository;
 import com.nutri_track.domain.specifications.SpecialtyHasIdSpecification;
 import org.springframework.stereotype.Service;

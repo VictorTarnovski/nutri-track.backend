@@ -1,6 +1,6 @@
 package com.nutri_track.domain.entities;
 
-import com.nutri_track.domain.exceptions.AppointmentScheduleInPastException;
+import com.nutri_track.domain.exceptions.appointments.AppointmentScheduleInPastException;
 import com.nutri_track.domain.states.AppointmentState;
 import com.nutri_track.domain.states.ConfirmationPendingAppointmentState;
 import com.nutri_track.domain.value_objects.OffsetDateTimeRange;

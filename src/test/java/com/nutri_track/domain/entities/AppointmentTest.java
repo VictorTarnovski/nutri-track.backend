@@ -1,6 +1,6 @@
 package com.nutri_track.domain.entities;
 
-import com.nutri_track.domain.exceptions.CancelledAppointmentConfirmationException;
+import com.nutri_track.domain.exceptions.appointments.CancelledAppointmentConfirmationException;
 import com.nutri_track.domain.states.CancelledAppointmentState;
 import com.nutri_track.domain.states.ConfirmationPendingAppointmentState;
 import com.nutri_track.domain.states.ScheduledAppointmentState;

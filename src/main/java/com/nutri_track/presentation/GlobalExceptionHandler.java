@@ -1,6 +1,6 @@
 package com.nutri_track.presentation;
 
-import com.nutri_track.domain.exceptions.AppointmentOverlapException;
+import com.nutri_track.domain.exceptions.appointments.AppointmentOverlapException;
 import com.nutri_track.domain.exceptions.NutriTrackRuntimeException;
 import com.nutri_track.application.dtos.MessageDto;
 import jakarta.persistence.OptimisticLockException;

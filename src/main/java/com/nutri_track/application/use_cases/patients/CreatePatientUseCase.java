@@ -1,7 +1,7 @@
 package com.nutri_track.application.use_cases.patients;
 
 import com.nutri_track.domain.entities.Patient;
-import com.nutri_track.domain.exceptions.PatientAlreadyRegisteredException;
+import com.nutri_track.domain.exceptions.professionals.PatientAlreadyRegisteredException;
 import com.nutri_track.domain.repositories.PatientRepository;
 import com.nutri_track.domain.specifications.PatientHasDocumentSpecification;
 import com.nutri_track.domain.specifications.PatientHasIdSpecification;

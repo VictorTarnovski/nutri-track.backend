@@ -2,9 +2,9 @@ package com.nutri_track.application.use_cases.appointments;
 
 import com.nutri_track.application.dtos.appointments.UpdateAppointmentDto;
 import com.nutri_track.domain.entities.Appointment;
-import com.nutri_track.domain.exceptions.AppointmentNotFoundException;
-import com.nutri_track.domain.exceptions.PatientNotFoundException;
-import com.nutri_track.domain.exceptions.ProfessionalNotFoundException;
+import com.nutri_track.domain.exceptions.appointments.AppointmentNotFoundException;
+import com.nutri_track.domain.exceptions.professionals.PatientNotFoundException;
+import com.nutri_track.domain.exceptions.professionals.ProfessionalNotFoundException;
 import com.nutri_track.domain.repositories.AppointmentRepository;
 import com.nutri_track.domain.repositories.PatientRepository;
 import com.nutri_track.domain.repositories.ProfessionalRepository;
