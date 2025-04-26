@@ -1,11 +1,11 @@
 package com.nutri_track.presentation.controllers;
 
 import com.nutri_track.application.use_cases.GetPatientUseCase;
-import com.nutri_track.application.dtos.GetPatientsDto;
+import com.nutri_track.application.dtos.patients.GetPatientsDto;
 import com.nutri_track.application.use_cases.CreatePatientUseCase;
 import com.nutri_track.application.use_cases.GetPatientsUseCase;
-import com.nutri_track.application.dtos.PatientDto;
-import com.nutri_track.application.dtos.CreatePatientDto;
+import com.nutri_track.application.dtos.patients.PatientDto;
+import com.nutri_track.application.dtos.patients.CreatePatientDto;
 import com.nutri_track.application.dtos.PaginationDto;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;

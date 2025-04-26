@@ -1,5 +1,6 @@
-package com.nutri_track.application.dtos;
+package com.nutri_track.application.dtos.appointments;
 
+import com.nutri_track.application.dtos.EntityDto;
 import com.nutri_track.domain.entities.Appointment;
 
 import java.time.OffsetDateTime;

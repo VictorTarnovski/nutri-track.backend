@@ -1,5 +1,7 @@
-package com.nutri_track.application.dtos;
+package com.nutri_track.application.dtos.professionals;
 
+import com.nutri_track.application.dtos.person.PersonDto;
+import com.nutri_track.application.dtos.specialties.SpecialtyDto;
 import com.nutri_track.domain.entities.Professional;
 
 import java.util.Set;

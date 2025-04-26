@@ -1,6 +1,6 @@
 package com.nutri_track.application.use_cases;
 
-import com.nutri_track.application.dtos.GetPatientsDto;
+import com.nutri_track.application.dtos.patients.GetPatientsDto;
 import com.nutri_track.domain.entities.Patient;
 import com.nutri_track.domain.repositories.PatientRepository;
 import com.nutri_track.domain.specifications.PatientHasIdInRangeSpecification;

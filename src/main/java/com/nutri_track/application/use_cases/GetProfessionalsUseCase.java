@@ -1,6 +1,6 @@
 package com.nutri_track.application.use_cases;
 
-import com.nutri_track.application.dtos.GetProfessionalsDto;
+import com.nutri_track.application.dtos.professionals.GetProfessionalsDto;
 import com.nutri_track.domain.entities.Professional;
 import com.nutri_track.domain.repositories.ProfessionalRepository;
 import com.nutri_track.domain.specifications.ProfessionalHasIdInRangeSpecification;

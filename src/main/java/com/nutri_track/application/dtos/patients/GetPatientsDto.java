@@ -1,4 +1,6 @@
-package com.nutri_track.application.dtos;
+package com.nutri_track.application.dtos.patients;
+
+import com.nutri_track.application.dtos.PaginatedDto;
 
 import java.util.List;
 import java.util.Optional;

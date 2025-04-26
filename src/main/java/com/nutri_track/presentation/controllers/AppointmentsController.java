@@ -1,6 +1,10 @@
 package com.nutri_track.presentation.controllers;
 
 import com.nutri_track.application.dtos.*;
+import com.nutri_track.application.dtos.appointments.AppointmentDto;
+import com.nutri_track.application.dtos.appointments.CreateAppointmentDto;
+import com.nutri_track.application.dtos.appointments.GetAppointmentsDto;
+import com.nutri_track.application.dtos.appointments.UpdateAppointmentDto;
 import com.nutri_track.application.use_cases.*;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;

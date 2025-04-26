@@ -1,4 +1,7 @@
-package com.nutri_track.application.dtos;
+package com.nutri_track.application.dtos.professionals;
+
+import com.nutri_track.application.dtos.AddressDto;
+import com.nutri_track.application.dtos.person.CreatePersonDto;
 
 public class CreateProfessionalDto extends CreatePersonDto {
     public CreateProfessionalDto(

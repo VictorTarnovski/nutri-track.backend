@@ -1,6 +1,6 @@
 package com.nutri_track.application.use_cases;
 
-import com.nutri_track.application.dtos.GetAppointmentsDto;
+import com.nutri_track.application.dtos.appointments.GetAppointmentsDto;
 import com.nutri_track.domain.entities.Appointment;
 import com.nutri_track.domain.repositories.AppointmentRepository;
 import com.nutri_track.domain.specifications.AppointmentIsNotNullSpecification;

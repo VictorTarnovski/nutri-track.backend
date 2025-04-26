@@ -1,6 +1,6 @@
 package com.nutri_track.application.use_cases;
 
-import com.nutri_track.application.dtos.GetSpecialtiesDto;
+import com.nutri_track.application.dtos.specialties.GetSpecialtiesDto;
 import com.nutri_track.domain.value_objects.Specialty;
 import com.nutri_track.domain.repositories.SpecialtyRepository;
 import com.nutri_track.domain.specifications.SpecialtyHasIdInRangeSpecification;

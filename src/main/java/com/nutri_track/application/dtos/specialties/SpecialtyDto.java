@@ -1,5 +1,6 @@
-package com.nutri_track.application.dtos;
+package com.nutri_track.application.dtos.specialties;
 
+import com.nutri_track.application.dtos.EntityDto;
 import com.nutri_track.domain.value_objects.Specialty;
 
 public class SpecialtyDto extends EntityDto {

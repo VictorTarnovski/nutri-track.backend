@@ -8,7 +8,7 @@ import com.nutri_track.domain.specifications.AppointmentHasPatientSpecification;
 import com.nutri_track.domain.specifications.AppointmentHasProfessionalSpecification;
 import com.nutri_track.domain.specifications.AppointmentIsScheduledBetweenSpecification;
 import com.nutri_track.domain.value_objects.OffsetDateTimeRange;
-import com.nutri_track.application.dtos.CreateAppointmentDto;
+import com.nutri_track.application.dtos.appointments.CreateAppointmentDto;
 import org.springframework.stereotype.Service;
 
 @Service

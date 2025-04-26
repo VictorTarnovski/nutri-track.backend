@@ -5,7 +5,7 @@ import com.nutri_track.domain.exceptions.PatientAlreadyRegisteredException;
 import com.nutri_track.domain.repositories.PatientRepository;
 import com.nutri_track.domain.specifications.PatientHasDocumentSpecification;
 import com.nutri_track.domain.specifications.PatientHasIdSpecification;
-import com.nutri_track.application.dtos.CreatePatientDto;
+import com.nutri_track.application.dtos.patients.CreatePatientDto;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 

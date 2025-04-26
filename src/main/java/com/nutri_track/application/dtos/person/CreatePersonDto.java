@@ -1,5 +1,6 @@
-package com.nutri_track.application.dtos;
+package com.nutri_track.application.dtos.person;
 
+import com.nutri_track.application.dtos.AddressDto;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

@@ -1,4 +1,4 @@
-package com.nutri_track.application.dtos;
+package com.nutri_track.application.dtos.appointments;
 
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
