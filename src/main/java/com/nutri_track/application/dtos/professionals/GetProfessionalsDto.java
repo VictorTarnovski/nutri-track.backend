@@ -7,14 +7,14 @@ import java.util.Optional;
 import java.util.Set;
 
 public class GetProfessionalsDto extends PaginatedDto {
-    private Optional<List<Long>> ids;
+    private List<Long> ids;
     private Set<Long> specialtyIds;
-    private Optional<String> search;
+    private String search;
 
     public GetProfessionalsDto(
-            Optional<List<Long>> ids,
+            List<Long> ids,
             Set<Long> specialtyIds,
-            Optional<String> search,
+            String search,
             Integer page,
             Integer pageSize) {
         super(page, pageSize);
@@ -24,7 +24,7 @@ public class GetProfessionalsDto extends PaginatedDto {
     }
 
     public Optional<List<Long>> ids() {
-        return this.ids;
+        return Optional.ofNullable(this.ids);
     }
 
     public Optional<Set<Long>> specialtyIds() {
@@ -32,6 +32,6 @@ public class GetProfessionalsDto extends PaginatedDto {
     }
 
     public Optional<String> search() {
-        return this.search;
+        return Optional.ofNullable(this.search);
     }
 }
