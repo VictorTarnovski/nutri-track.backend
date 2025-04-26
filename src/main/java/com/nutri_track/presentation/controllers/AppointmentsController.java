@@ -5,7 +5,7 @@ import com.nutri_track.application.dtos.appointments.AppointmentDto;
 import com.nutri_track.application.dtos.appointments.CreateAppointmentDto;
 import com.nutri_track.application.dtos.appointments.GetAppointmentsDto;
 import com.nutri_track.application.dtos.appointments.UpdateAppointmentDto;
-import com.nutri_track.application.use_cases.*;
+import com.nutri_track.application.use_cases.appointments.*;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

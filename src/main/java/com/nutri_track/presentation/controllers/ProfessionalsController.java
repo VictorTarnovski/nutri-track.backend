@@ -1,9 +1,9 @@
 package com.nutri_track.presentation.controllers;
 
-import com.nutri_track.application.use_cases.GetProfessionalUseCase;
+import com.nutri_track.application.use_cases.professionals.GetProfessionalUseCase;
 import com.nutri_track.application.dtos.professionals.GetProfessionalsDto;
-import com.nutri_track.application.use_cases.CreateProfessionalUseCase;
-import com.nutri_track.application.use_cases.GetProfessionalsUseCase;
+import com.nutri_track.application.use_cases.professionals.CreateProfessionalUseCase;
+import com.nutri_track.application.use_cases.professionals.GetProfessionalsUseCase;
 import com.nutri_track.application.dtos.professionals.ProfessionalDto;
 import com.nutri_track.application.dtos.professionals.CreateProfessionalDto;
 import com.nutri_track.application.dtos.PaginationDto;

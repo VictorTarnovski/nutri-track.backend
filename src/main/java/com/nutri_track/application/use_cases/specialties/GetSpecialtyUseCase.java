@@ -1,4 +1,4 @@
-package com.nutri_track.application.use_cases;
+package com.nutri_track.application.use_cases.specialties;
 
 import com.nutri_track.domain.value_objects.Specialty;
 import com.nutri_track.domain.exceptions.SpecialtyNotFoundException;

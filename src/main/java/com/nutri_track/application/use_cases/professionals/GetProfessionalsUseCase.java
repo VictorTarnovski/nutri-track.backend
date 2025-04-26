@@ -1,4 +1,4 @@
-package com.nutri_track.application.use_cases;
+package com.nutri_track.application.use_cases.professionals;
 
 import com.nutri_track.application.dtos.professionals.GetProfessionalsDto;
 import com.nutri_track.domain.entities.Professional;

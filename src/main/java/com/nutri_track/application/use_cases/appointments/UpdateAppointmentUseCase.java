@@ -1,4 +1,4 @@
-package com.nutri_track.application.use_cases;
+package com.nutri_track.application.use_cases.appointments;
 
 import com.nutri_track.application.dtos.appointments.UpdateAppointmentDto;
 import com.nutri_track.domain.entities.Appointment;

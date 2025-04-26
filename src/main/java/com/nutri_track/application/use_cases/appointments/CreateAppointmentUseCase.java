@@ -1,5 +1,7 @@
-package com.nutri_track.application.use_cases;
+package com.nutri_track.application.use_cases.appointments;
 
+import com.nutri_track.application.use_cases.patients.GetPatientUseCase;
+import com.nutri_track.application.use_cases.professionals.GetProfessionalUseCase;
 import com.nutri_track.domain.entities.Appointment;
 import com.nutri_track.domain.exceptions.AppointmentOverlapException;
 import com.nutri_track.domain.repositories.AppointmentRepository;

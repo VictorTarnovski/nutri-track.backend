@@ -1,7 +1,7 @@
 package com.nutri_track.presentation.controllers;
 
-import com.nutri_track.application.use_cases.GetSpecialtyUseCase;
-import com.nutri_track.application.use_cases.GetSpecialtiesUseCase;
+import com.nutri_track.application.use_cases.specialties.GetSpecialtyUseCase;
+import com.nutri_track.application.use_cases.specialties.GetSpecialtiesUseCase;
 import com.nutri_track.application.dtos.specialties.GetSpecialtiesDto;
 import com.nutri_track.application.dtos.PaginationDto;
 import com.nutri_track.application.dtos.specialties.SpecialtyDto;

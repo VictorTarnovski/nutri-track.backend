@@ -1,4 +1,4 @@
-package com.nutri_track.application.use_cases;
+package com.nutri_track.application.use_cases.appointments;
 
 import com.nutri_track.domain.exceptions.AppointmentNotFoundException;
 import com.nutri_track.domain.repositories.AppointmentRepository;
@@ -6,10 +6,10 @@ import com.nutri_track.domain.specifications.AppointmentHasIdSpecification;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ConfirmAppointmentUseCase {
+public class CancelAppointmentUseCase {
     private final AppointmentRepository appointmentRepository;
 
-    public ConfirmAppointmentUseCase(AppointmentRepository appointmentRepository) {
+    public CancelAppointmentUseCase(AppointmentRepository appointmentRepository) {
         this.appointmentRepository = appointmentRepository;
     }
 
@@ -19,7 +19,7 @@ public class ConfirmAppointmentUseCase {
                 .findOne(spec)
                 .orElseThrow(() -> new AppointmentNotFoundException(appointmentId));
 
-        appointment.confirm();
+        appointment.cancel();
 
         appointmentRepository.save(appointment);
     }

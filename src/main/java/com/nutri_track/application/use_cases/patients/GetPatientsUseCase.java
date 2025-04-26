@@ -1,4 +1,4 @@
-package com.nutri_track.application.use_cases;
+package com.nutri_track.application.use_cases.patients;
 
 import com.nutri_track.application.dtos.patients.GetPatientsDto;
 import com.nutri_track.domain.entities.Patient;
