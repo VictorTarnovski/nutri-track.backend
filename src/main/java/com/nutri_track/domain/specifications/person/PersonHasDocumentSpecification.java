@@ -1,4 +1,4 @@
-package com.nutri_track.domain.specifications;
+package com.nutri_track.domain.specifications.person;
 
 import com.nutri_track.domain.entities.Person;
 import jakarta.persistence.criteria.CriteriaBuilder;

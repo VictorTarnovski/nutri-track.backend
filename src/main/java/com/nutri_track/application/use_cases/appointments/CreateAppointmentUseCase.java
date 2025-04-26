@@ -5,10 +5,10 @@ import com.nutri_track.application.use_cases.professionals.GetProfessionalUseCas
 import com.nutri_track.domain.entities.Appointment;
 import com.nutri_track.domain.exceptions.appointments.AppointmentOverlapException;
 import com.nutri_track.domain.repositories.AppointmentRepository;
-import com.nutri_track.domain.specifications.AppointmentHasIdSpecification;
-import com.nutri_track.domain.specifications.AppointmentHasPatientSpecification;
-import com.nutri_track.domain.specifications.AppointmentHasProfessionalSpecification;
-import com.nutri_track.domain.specifications.AppointmentIsScheduledBetweenSpecification;
+import com.nutri_track.domain.specifications.appointments.AppointmentHasIdSpecification;
+import com.nutri_track.domain.specifications.appointments.AppointmentHasPatientSpecification;
+import com.nutri_track.domain.specifications.appointments.AppointmentHasProfessionalSpecification;
+import com.nutri_track.domain.specifications.appointments.AppointmentIsScheduledBetweenSpecification;
 import com.nutri_track.domain.value_objects.OffsetDateTimeRange;
 import com.nutri_track.application.dtos.appointments.CreateAppointmentDto;
 import org.springframework.stereotype.Service;

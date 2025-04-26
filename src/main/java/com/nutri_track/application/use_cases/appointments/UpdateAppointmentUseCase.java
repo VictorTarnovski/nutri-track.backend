@@ -8,9 +8,9 @@ import com.nutri_track.domain.exceptions.professionals.ProfessionalNotFoundExcep
 import com.nutri_track.domain.repositories.AppointmentRepository;
 import com.nutri_track.domain.repositories.PatientRepository;
 import com.nutri_track.domain.repositories.ProfessionalRepository;
-import com.nutri_track.domain.specifications.AppointmentHasIdSpecification;
-import com.nutri_track.domain.specifications.PatientHasIdSpecification;
-import com.nutri_track.domain.specifications.ProfessionalHasIdSpecification;
+import com.nutri_track.domain.specifications.appointments.AppointmentHasIdSpecification;
+import com.nutri_track.domain.specifications.patients.PatientHasIdSpecification;
+import com.nutri_track.domain.specifications.professionals.ProfessionalHasIdSpecification;
 import com.nutri_track.domain.value_objects.OffsetDateTimeRange;
 import org.springframework.stereotype.Service;
 

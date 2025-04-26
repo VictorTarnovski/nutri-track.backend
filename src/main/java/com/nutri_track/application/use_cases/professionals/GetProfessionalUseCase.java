@@ -3,7 +3,7 @@ package com.nutri_track.application.use_cases.professionals;
 import com.nutri_track.domain.entities.Professional;
 import com.nutri_track.domain.exceptions.professionals.ProfessionalNotFoundException;
 import com.nutri_track.domain.repositories.ProfessionalRepository;
-import com.nutri_track.domain.specifications.ProfessionalHasIdSpecification;
+import com.nutri_track.domain.specifications.professionals.ProfessionalHasIdSpecification;
 import org.springframework.stereotype.Service;
 
 @Service
