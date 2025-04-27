@@ -28,6 +28,7 @@ public class CreateProfessionalUseCase {
                 dto.document(),
                 dto.firstName(),
                 dto.lastName(),
+                dto.birthDate(),
                 dto.address().toAddress()
         );
         professionalRepository.save(professional);

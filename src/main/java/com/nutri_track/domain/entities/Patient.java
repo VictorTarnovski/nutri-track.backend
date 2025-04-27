@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
+import java.time.OffsetDateTime;
+
 @Entity
 @Table(name = "patients")
 @SequenceGenerator(name = "patients_seq", sequenceName = "patients_sequence", allocationSize = 1)
@@ -13,7 +15,7 @@ public class Patient extends Person {
         super();
     }
 
-    public Patient(String document, String firstName, String lastName, Address address) {
-        super(document, firstName, lastName, address);
+    public Patient(String document, String firstName, String lastName, OffsetDateTime birthDate, Address address) {
+        super(document, firstName, lastName, birthDate, address);
     }
 }

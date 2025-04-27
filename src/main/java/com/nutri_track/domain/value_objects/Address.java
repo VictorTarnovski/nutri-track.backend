@@ -101,18 +101,18 @@ public class Address implements Comparable<Address> {
     }
 
     @Override
-    public int compareTo(Address other) {
-        int result = this.line1.compareTo(other.line1);
+    public int compareTo(Address o) {
+        int result = this.line1.compareTo(o.line1);
         if (result != 0) return result;
-        result = this.line2.compareTo(other.line2);
+        result = this.line2.compareTo(o.line2);
         if (result != 0) return result;
-        result = this.city.compareTo(other.city);
+        result = this.city.compareTo(o.city);
         if (result != 0) return result;
-        result = this.region.compareTo(other.region);
+        result = this.region.compareTo(o.region);
         if (result != 0) return result;
-        result = this.postalCode.compareTo(other.postalCode);
+        result = this.postalCode.compareTo(o.postalCode);
         if (result != 0) return result;
-        return this.countryCode.compareTo(other.countryCode);
+        return this.countryCode.compareTo(o.countryCode);
     }
 
     //endregion

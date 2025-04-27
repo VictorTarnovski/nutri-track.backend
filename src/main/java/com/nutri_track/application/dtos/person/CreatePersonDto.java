@@ -4,6 +4,9 @@ import com.nutri_track.application.dtos.AddressDto;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+
+import java.time.OffsetDateTime;
 
 public class CreatePersonDto {
     @NotNull
@@ -15,7 +18,9 @@ public class CreatePersonDto {
     @NotNull
     @NotBlank
     protected String lastName;
-
+    @NotNull
+    @Past
+    protected OffsetDateTime birthDate;
     @NotNull
     @Valid
     protected AddressDto address;
@@ -24,10 +29,12 @@ public class CreatePersonDto {
             String document,
             String firstName,
             String lastName,
+            OffsetDateTime birthDate,
             AddressDto address) {
         this.document = document;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.birthDate = birthDate;
         this.address = address;
     }
 
@@ -41,6 +48,10 @@ public class CreatePersonDto {
 
     public String lastName() {
         return this.lastName;
+    }
+
+    public OffsetDateTime birthDate() {
+        return this.birthDate;
     }
 
     public AddressDto address() {

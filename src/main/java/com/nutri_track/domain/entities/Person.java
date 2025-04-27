@@ -3,12 +3,17 @@
 import com.nutri_track.domain.value_objects.Address;
 import jakarta.persistence.*;
 
-@MappedSuperclass
+import java.time.Instant;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
+
+    @MappedSuperclass
 public abstract class Person extends AbstractAggregateRoot {
     //region fields
     protected String document;
     protected String firstName;
     protected String lastName;
+    protected OffsetDateTime birthDate;
     
     @Embedded
     @AttributeOverrides({
@@ -32,6 +37,7 @@ public abstract class Person extends AbstractAggregateRoot {
             String document,
             String firstName,
             String lastName,
+            OffsetDateTime birthDate,
             Address address) {
         super();
 
@@ -44,6 +50,9 @@ public abstract class Person extends AbstractAggregateRoot {
         if (lastName == null) throw new IllegalArgumentException("lastName must not be null");
         this.lastName = lastName;
 
+        if (birthDate == null) throw new IllegalArgumentException("birthDate must not be null");
+        this.birthDate = birthDate;
+
         if (address == null) throw new IllegalArgumentException("address must not be null");
         this.address = address;
     }
@@ -52,7 +61,7 @@ public abstract class Person extends AbstractAggregateRoot {
 
     //region getters
     public String document() {
-        return this.document;
+        return document;
     }
 
     public String firstName() {
@@ -61,6 +70,10 @@ public abstract class Person extends AbstractAggregateRoot {
 
     public String lastName() {
         return  lastName;
+    }
+
+    public OffsetDateTime birthDate() {
+        return birthDate;
     }
 
     //region address

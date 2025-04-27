@@ -28,6 +28,7 @@ public class CreatePatientUseCase {
                 dto.document(),
                 dto.firstName(),
                 dto.lastName(),
+                dto.birthDate(),
                 dto.address().toAddress()
         );
         patientRepository.save(patient);
