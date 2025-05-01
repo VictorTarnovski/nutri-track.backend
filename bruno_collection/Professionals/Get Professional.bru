@@ -1,0 +1,19 @@
+meta {
+  name: Get Professional
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/professionals/:id
+  body: none
+  auth: none
+}
+
+params:path {
+  id: 1
+}
+
+headers {
+  ~Accept: application/json
+}

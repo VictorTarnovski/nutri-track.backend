@@ -1,0 +1,28 @@
+meta {
+  name: Update Appointment
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{base_url}}/appointments/:appointmentId
+  body: json
+  auth: none
+}
+
+params:path {
+  appointmentId: 1
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+      "patientId" : 1,
+      "professionalId" : 1,
+      "scheduledToStart": "2025-04-20T18:37:00Z",
+      "scheduledToEnd": "2025-04-20T19:37:00Z"
+  }
+}

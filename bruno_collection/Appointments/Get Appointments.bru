@@ -1,0 +1,20 @@
+meta {
+  name: Get Appointments
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/appointments?page=1&pageSize=120
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 1
+  pageSize: 120
+}
+
+headers {
+  ~Accept: application/json
+}

@@ -1,0 +1,22 @@
+meta {
+  name: Get Patients
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/patients?page=1&pageSize=120
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 1
+  pageSize: 120
+  ~search: 
+  ~ids: 
+}
+
+headers {
+  ~Accept: application/json
+}

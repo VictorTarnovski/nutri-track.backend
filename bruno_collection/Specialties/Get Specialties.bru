@@ -1,0 +1,21 @@
+meta {
+  name: Get Specialties
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/specialties?page=1&pageSize=120
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 1
+  pageSize: 120
+  ~ids: 
+}
+
+headers {
+  ~Accept: application/json
+}

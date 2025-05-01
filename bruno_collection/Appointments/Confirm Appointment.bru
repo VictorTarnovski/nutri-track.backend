@@ -1,0 +1,19 @@
+meta {
+  name: Confirm Appointment
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{base_url}}/appointments/:appointment_id/confirm
+  body: json
+  auth: none
+}
+
+params:path {
+  appointment_id: 1
+}
+
+headers {
+  ~Accept: application/json
+}

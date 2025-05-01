@@ -1,0 +1,31 @@
+meta {
+  name: Create Patient
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/patients
+  body: json
+  auth: none
+}
+
+headers {
+  ~Accept: application/json
+}
+
+body:json {
+  {
+      "document": "110.270.349-42",
+      "firstName": "Victor",
+      "lastName": "Tarnovski",
+      "address": {
+          "line1": "Victor da Cruz Tarnovski",
+          "line2": "Rua Porto Alegre, 750 - Tapajós",
+          "city": "Indaial",
+          "region": "Santa Catarina",
+          "postalCode": "89080-193",
+          "countryCode": "BR"
+      }
+  }
+}

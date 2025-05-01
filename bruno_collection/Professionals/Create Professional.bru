@@ -1,0 +1,31 @@
+meta {
+  name: Create Professional
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/professionals
+  body: json
+  auth: none
+}
+
+headers {
+  ~Accept: application/json
+}
+
+body:json {
+  {
+      "document": "113.615.799-94",
+      "firstName": "Liandra",
+      "lastName": "Porto",
+      "address": {
+          "line1": "Liandra Maria Porto",
+          "line2": "Rua Coral, 170 - Ribeirão das Pedras",
+          "city": "Indaial",
+          "region": "Santa Catarina",
+          "postalCode": "89080-565",
+          "countryCode": "BR"
+      }
+  }
+}
