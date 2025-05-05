@@ -33,6 +33,13 @@ public class FileLocation {
 
     //endregion
 
+    //region getters
+    public String path() {
+        return this.path;
+    }
+
+    //endregion
+
     //region methods
     public boolean fromS3() {
         return storage == FileLocationStorage.S3;

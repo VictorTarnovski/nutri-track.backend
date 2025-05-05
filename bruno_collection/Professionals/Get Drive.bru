@@ -1,0 +1,19 @@
+meta {
+  name: Get Drive
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{base_url}}/professionals/:id/drive
+  body: none
+  auth: none
+}
+
+params:path {
+  id: 1
+}
+
+headers {
+  ~Accept: application/json
+}

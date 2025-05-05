@@ -19,4 +19,8 @@ public class Folder extends DriveItem {
     public Folder(String name, Professional professional, Folder parent) {
         super(name, professional, parent);
     }
+
+    public Set<DriveItem> children() {
+        return this.children;
+    }
 }

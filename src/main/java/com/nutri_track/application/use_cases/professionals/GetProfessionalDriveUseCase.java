@@ -1,0 +1,28 @@
+package com.nutri_track.application.use_cases.professionals;
+
+import com.nutri_track.domain.entities.DriveItem;
+import com.nutri_track.domain.repositories.DriveItemRepository;
+import com.nutri_track.domain.specifications.DriveItemHasNoParentSpecification;
+import com.nutri_track.domain.specifications.DriveItemHasProfessionalIdSpecification;
+import com.nutri_track.domain.specifications.DriveItemIsNotNullSpecification;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
+
+import java.util.HashSet;
+import java.util.Set;
+
+@Service
+public class GetProfessionalDriveUseCase {
+    private final DriveItemRepository driveItemRepository;
+
+    public GetProfessionalDriveUseCase(DriveItemRepository driveItemRepository) {
+        this.driveItemRepository = driveItemRepository;
+    }
+
+    public Set<DriveItem> execute(long professionalId) {
+        Specification<DriveItem> spec = new DriveItemIsNotNullSpecification();
+        spec = spec.and(new DriveItemHasNoParentSpecification());
+        spec = spec.and(new DriveItemHasProfessionalIdSpecification(professionalId));
+        return new HashSet<>(driveItemRepository.findAll(spec));
+    }
+}
