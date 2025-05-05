@@ -8,6 +8,7 @@ public class FileDto extends DriveItemDto {
 
     public FileDto(File file) {
         super(file);
-        path = file.location().path();
+        this.name = file.name();
+        this.path = file.location().path();
     }
 }
