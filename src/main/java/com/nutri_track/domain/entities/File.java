@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @DiscriminatorValue("application/octet-stream")
-public abstract class File extends DriveItem {
+public class File extends DriveItem {
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "path", column = @Column(name = "location_path")),
