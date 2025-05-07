@@ -7,7 +7,7 @@ import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
 import org.springframework.data.jpa.domain.Specification;
 
-public class DriveItemHasProfessionalIdSpecification implements Specification<DriveItem> {
+public class DriveItemHasProfessionalIdSpecification<TAggregate extends DriveItem> implements Specification<TAggregate> {
     private final long professionalId;
 
     public DriveItemHasProfessionalIdSpecification(long professionalId) {
@@ -15,7 +15,7 @@ public class DriveItemHasProfessionalIdSpecification implements Specification<Dr
     }
 
     @Override
-    public Predicate toPredicate(Root<DriveItem> root, CriteriaQuery<?> query, CriteriaBuilder builder) {
+    public Predicate toPredicate(Root<TAggregate> root, CriteriaQuery<?> query, CriteriaBuilder builder) {
         return builder.equal(root.get("professional").get("id"), professionalId);
     }
 }
