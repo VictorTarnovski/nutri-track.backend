@@ -11,7 +11,7 @@ public class FileDto extends DriveItemDto {
     public FileDto(File file) {
         super(file);
         this.name = file.name();
-        this.path = file.location().path();
+        this.path = file.path();
         this.mimeType = mimeType(file);
     }
 

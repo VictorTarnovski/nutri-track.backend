@@ -1,4 +1,4 @@
-package com.nutri_track.domain.specifications;
+package com.nutri_track.domain.specifications.drive.file;
 
 import com.nutri_track.domain.entities.File;
 import com.nutri_track.domain.entities.Folder;

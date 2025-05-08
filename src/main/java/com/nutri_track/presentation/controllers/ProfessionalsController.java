@@ -8,10 +8,14 @@ import com.nutri_track.application.dtos.professionals.ProfessionalDto;
 import com.nutri_track.application.dtos.professionals.CreateProfessionalDto;
 import com.nutri_track.application.dtos.PaginationDto;
 import jakarta.validation.Valid;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.print.attribute.standard.Media;
 import java.util.UUID;
 
 @RestController
@@ -20,23 +24,26 @@ public class ProfessionalsController {
     private final CreateProfessionalUseCase createProfessionalUseCase;
     private final GetProfessionalUseCase getProfessionalUseCase;
     private final GetProfessionalsUseCase getProfessionalsUseCase;
-    private final GetProfessionalDriveUseCase getProfessionalDriveUseCase;
     private final CreateProfessionalFileUseCase createProfessionalFileUseCase;
     private final CreateProfessionalFolderUseCase createProfessionalFolderUseCase;
+    private final GetProfessionalDriveUseCase getProfessionalDriveUseCase;
+    private final GetProfessionalFileUseCase getProfessionalFileUseCase;
 
     public ProfessionalsController(
             CreateProfessionalUseCase createProfessionalUseCase,
             GetProfessionalUseCase getProfessionalUseCase,
             GetProfessionalsUseCase getProfessionalsUseCase,
-            GetProfessionalDriveUseCase getProfessionalDriveUseCase,
             CreateProfessionalFileUseCase createProfessionalFileUseCase,
-            CreateProfessionalFolderUseCase createProfessionalFolderUseCase) {
+            CreateProfessionalFolderUseCase createProfessionalFolderUseCase,
+            GetProfessionalDriveUseCase getProfessionalDriveUseCase,
+            GetProfessionalFileUseCase getProfessionalFileUseCase) {
         this.createProfessionalUseCase = createProfessionalUseCase;
         this.getProfessionalUseCase = getProfessionalUseCase;
         this.getProfessionalsUseCase = getProfessionalsUseCase;
-        this.getProfessionalDriveUseCase = getProfessionalDriveUseCase;
         this.createProfessionalFileUseCase = createProfessionalFileUseCase;
         this.createProfessionalFolderUseCase = createProfessionalFolderUseCase;
+        this.getProfessionalDriveUseCase = getProfessionalDriveUseCase;
+        this.getProfessionalFileUseCase = getProfessionalFileUseCase;
     }
 
     @PostMapping
@@ -95,5 +102,21 @@ public class ProfessionalsController {
                 .map(DriveDtoFactory::create)
                 .toList();
         return ResponseEntity.ok(drive);
+    }
+
+    @GetMapping(
+            value = "{professionalId}/files/{fileId}",
+            produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    public ResponseEntity<?> FindFile(@PathVariable UUID fileId) {
+        var dto = getProfessionalFileUseCase.execute(fileId);
+        var headers = new HttpHeaders();
+        headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + dto.fileName());
+        var resource = new ByteArrayResource(dto.content());
+
+        return ResponseEntity
+                .ok()
+                .headers(headers)
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(resource);
     }
 }

@@ -6,4 +6,5 @@ import java.io.IOException;
 
 public interface FileStoragePort {
     FileLocation store(byte[] content) throws IOException;
+    byte[] retrieve(String path) throws IOException;
 }

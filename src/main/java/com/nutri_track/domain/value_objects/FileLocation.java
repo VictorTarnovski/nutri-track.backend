@@ -25,7 +25,7 @@ public class FileLocation {
     }
 
     public static FileLocation forS3(String path) {
-        if (!path.contains("s3://"))
+        if (!fromS3(path))
             throw new IllegalArgumentException("path must start with \"s3://\"");
 
         return new FileLocation(path, FileLocationStorage.S3);
@@ -41,8 +41,8 @@ public class FileLocation {
     //endregion
 
     //region methods
-    public boolean fromS3() {
-        return storage == FileLocationStorage.S3;
+    public static boolean fromS3(String path) {
+        return path.startsWith("s3://");
     }
 
     @Override

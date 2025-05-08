@@ -27,7 +27,7 @@ public class File extends DriveItem {
         this.location = location;
     }
 
-    public FileLocation location() {
-        return this.location;
+    public String path() {
+        return this.location.path();
     }
 }

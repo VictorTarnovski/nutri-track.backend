@@ -5,7 +5,10 @@ import com.nutri_track.domain.exceptions.FolderAlreadyCreatedException;
 import com.nutri_track.domain.exceptions.professionals.ProfessionalNotFoundException;
 import com.nutri_track.domain.repositories.FolderRepository;
 import com.nutri_track.domain.repositories.ProfessionalRepository;
-import com.nutri_track.domain.specifications.*;
+import com.nutri_track.domain.specifications.drive.folder.FolderHasIdSpecification;
+import com.nutri_track.domain.specifications.drive.folder.FolderHasNameSpecification;
+import com.nutri_track.domain.specifications.drive.folder.FolderHasParentSpecification;
+import com.nutri_track.domain.specifications.drive.folder.FolderHasProfessionalIdSpecification;
 import com.nutri_track.domain.specifications.professionals.ProfessionalHasIdSpecification;
 import org.springframework.stereotype.Service;
 

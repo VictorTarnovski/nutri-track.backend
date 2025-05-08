@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.GetObjectRequest;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 
 import java.io.IOException;
@@ -46,5 +47,21 @@ public class S3FileStorageAdapter implements FileStoragePort {
 
         var path = String.format("s3://%s/%s", bucketName, key);
         return FileLocation.forS3(path);
+    }
+
+    @Override
+    public byte[] retrieve(String path) throws IOException {
+        var strs = path.split("/");
+        var bucketName = strs[2];
+        var key = strs[3];
+
+        var getObjectRequest = GetObjectRequest.builder()
+                .bucket(bucketName)
+                .key(key)
+                .responseContentType("application/octet-stream")
+                .build();
+
+        byte[] content = s3Client.getObject(getObjectRequest).readAllBytes();
+        return content;
     }
 }

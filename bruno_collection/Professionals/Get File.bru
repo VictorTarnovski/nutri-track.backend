@@ -1,0 +1,26 @@
+meta {
+  name: Get File
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{base_url}}/professionals/:professionalId/files/:fileId
+  body: multipartForm
+  auth: none
+}
+
+params:path {
+  professionalId: 1
+  fileId: fb2b5016-962d-47d8-b40a-91f925f3d940
+}
+
+headers {
+  ~Accept: application/json
+}
+
+body:multipart-form {
+  name: medicao antropometrica
+  file: @file(C:\Users\Windows 10\Downloads\casamento maria e leonardo (1).docx)
+  parent_id: 7d9a6c4e-a90e-440a-a54a-69aa24e583de
+}
