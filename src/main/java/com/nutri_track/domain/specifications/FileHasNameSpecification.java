@@ -1,6 +1,7 @@
 package com.nutri_track.domain.specifications;
 
 import com.nutri_track.domain.entities.File;
+import com.nutri_track.domain.specifications.drive.DriveItemHasNameSpecification;
 
 public class FileHasNameSpecification extends DriveItemHasNameSpecification<File> {
     public FileHasNameSpecification(String name) {

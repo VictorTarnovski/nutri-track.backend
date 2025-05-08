@@ -1,4 +1,4 @@
-package com.nutri_track.domain.specifications;
+package com.nutri_track.domain.specifications.drive;
 
 import com.nutri_track.domain.entities.DriveItem;
 import jakarta.persistence.criteria.CriteriaBuilder;

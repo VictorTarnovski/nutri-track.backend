@@ -1,6 +1,7 @@
 package com.nutri_track.presentation.controllers;
 
 import com.nutri_track.application.dtos.DriveDtoFactory;
+import com.nutri_track.application.dtos.professionals.CreateProfessionalFolderDto;
 import com.nutri_track.application.use_cases.professionals.*;
 import com.nutri_track.application.dtos.professionals.GetProfessionalsDto;
 import com.nutri_track.application.dtos.professionals.ProfessionalDto;
@@ -21,18 +22,21 @@ public class ProfessionalsController {
     private final GetProfessionalsUseCase getProfessionalsUseCase;
     private final GetProfessionalDriveUseCase getProfessionalDriveUseCase;
     private final CreateProfessionalFileUseCase createProfessionalFileUseCase;
+    private final CreateProfessionalFolderUseCase createProfessionalFolderUseCase;
 
     public ProfessionalsController(
             CreateProfessionalUseCase createProfessionalUseCase,
             GetProfessionalUseCase getProfessionalUseCase,
             GetProfessionalsUseCase getProfessionalsUseCase,
             GetProfessionalDriveUseCase getProfessionalDriveUseCase,
-            CreateProfessionalFileUseCase createProfessionalFileUseCase) {
+            CreateProfessionalFileUseCase createProfessionalFileUseCase,
+            CreateProfessionalFolderUseCase createProfessionalFolderUseCase) {
         this.createProfessionalUseCase = createProfessionalUseCase;
         this.getProfessionalUseCase = getProfessionalUseCase;
         this.getProfessionalsUseCase = getProfessionalsUseCase;
         this.getProfessionalDriveUseCase = getProfessionalDriveUseCase;
         this.createProfessionalFileUseCase = createProfessionalFileUseCase;
+        this.createProfessionalFolderUseCase = createProfessionalFolderUseCase;
     }
 
     @PostMapping
@@ -56,7 +60,7 @@ public class ProfessionalsController {
         return ResponseEntity.ok(new PaginationDto<>(page));
     }
 
-    @PostMapping("{professionalId}/drive")
+    @PostMapping("{professionalId}/files")
     public ResponseEntity<?> CreateFile(
             @PathVariable long professionalId,
             @RequestParam("name") String name,
@@ -67,6 +71,20 @@ public class ProfessionalsController {
                 name,
                 file,
                 parentId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("{professionalId}/folders")
+    public ResponseEntity<?> CreateFolder(
+            @PathVariable
+            long professionalId,
+            @Valid
+            @RequestBody
+            CreateProfessionalFolderDto dto) {
+        createProfessionalFolderUseCase.execute(
+                professionalId,
+                dto.name(),
+                dto.parentId());
         return ResponseEntity.noContent().build();
     }
 

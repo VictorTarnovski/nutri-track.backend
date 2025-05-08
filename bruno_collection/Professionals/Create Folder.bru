@@ -1,0 +1,32 @@
+meta {
+  name: Create Folder
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{base_url}}/professionals/:id/folders
+  body: json
+  auth: none
+}
+
+params:path {
+  id: 1
+}
+
+headers {
+  ~Accept: application/json
+}
+
+body:json {
+  {
+    "name": "victor",
+    "parentId": null
+  }
+}
+
+body:multipart-form {
+  name: medicao antropometrica
+  file: @file(C:\Users\Windows 10\Downloads\casamento maria e leonardo (1).docx)
+  parent_id: 7d9a6c4e-a90e-440a-a54a-69aa24e583de
+}
